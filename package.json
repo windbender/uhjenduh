@@ -1,0 +1,30 @@
+{
+  "name": "uhjenduh",
+  "version": "1.0.0",
+  "description": "simple angular javascript app to keep track of the agenda and time during a meeting",
+  "main": "index.html",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-moment": "^0.10.3",
+    "bootstrap": "^3.3.5",
+    "jquery": "^2.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/windbender/uhjenduh.git"
+  },
+  "keywords": [
+    "agenda",
+    "time"
+  ],
+  "author": "windbender",
+  "license": "GPL 2.0",
+  "bugs": {
+    "url": "https://github.com/windbender/uhjenduh/issues"
+  },
+  "homepage": "https://github.com/windbender/uhjenduh"
+}
