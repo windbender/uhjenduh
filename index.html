@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Uh Jen Duh</title>
+
+    <!-- Bootstrap -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+  </head>
+  <body ng-controller="agendaCtrl">
+    <h1>Agenda</h1>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="node_modules/jquery/jquery.js"></script>
+    <script src="node_modules/angular-moment/node_modules/moment/moment.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="url.js"></script>
+    <script src="app.js"></script>
+    <script src="node_modules/angular-moment/angular-moment.js"></script>
+    
+	<div>
+		<table>
+			<tr>
+				<td>time:</td><td>{{curTime}}</td>
+			</tr>
+		</table>		
+	</div>
+	<div>
+				<button ng-click="startMeeting()">'m' start meeting</button>
+				<button>'r' reset meeting</button>
+				<button ng-click="finish()">'f' Finished</button>
+				<button ng-click="skip()">'s' Skip</button>
+				<button ng-click="postpone()">'p' Postpone</button>
+				<button>'a' Add</button>
+				<button ng-click="forceUpdate()">'u' update</button>
+	</div>
+	<div>
+	<table class="table">
+    	<tr>
+    		<th>bringer</th>
+    		<th>facilitator</th>
+    		<th>planned start time</th>
+    		<th>adjusted start time</th>
+    		<th>actual start time</th>
+    		<th>planned length</th>
+    		<th>topic</th>
+    		<th>idd</th>
+    		</tr>
+    	<tr ng-repeat="ent in parsedEntries" ng-class="whichClass($index)" >
+    		<td>{{ent.bringer}}</td>
+    		<td>{{ent.facilitator}}</td>
+    		<td>{{ent.starttime | amDateFormat:'h:mm'}}</td>
+    		<td>{{ent.adjstarttime | amDateFormat:'h:mm'}}</td> 
+    		<td>{{ent.actstarttime | amDateFormat:'h:mm'}}</td>
+    		<td>{{ent.length | amDurationFormat : 'minute'}}</td>
+    		<td>{{ent.topic}}</td>
+    		<td>{{ent.idd}}</td>
+    		<td>
+    			<button><span class="glyphicon glyphicon-menu-up" ></span></button>
+    			<button><span class="glyphicon glyphicon-menu-down" ></span></button>
+    		</td>
+    	</tr>
+    	<tr>
+	    	<td></td><td></td>
+	    	<td><b>meeting finish</b></td>
+	    	<td>{{ finishtime | amDateFormat:'h:mm'}}</td>
+    	</tr>
+	  </table>
+	</div>
+	<div>  
+	</ul>
+	</div>
+  </body>
+</html>
